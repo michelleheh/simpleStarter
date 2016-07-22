@@ -1,6 +1,11 @@
-div #temp {
+div#temp {
   width: 200px;
   height: 300px;
   background: blue;
   margin: 30px;
+}
+
+img.gif {
+  width: 100px;
+  margin: 2px;
 }

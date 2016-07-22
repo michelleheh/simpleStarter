@@ -9,9 +9,13 @@ $( document ).ready(function() {
     // get request
     $.get(url, function(data) {
       console.log(data);
-
-      var gifURL = data.data[0].images.downsized_large.url;
-      $('#gif').append(`<img src="${gifURL}"/>`);
+      $('div#gifs').empty();
+      data.data.forEach(function(item) {
+        var gifURL = item.images.downsized_large.url;
+        var $gif = $("<img>", {src: gifURL, class: "gif"});
+        var $gif = $("<div>").append($gif);
+        $('div#gifs').append($gif);
+      });
     });
 
   });
